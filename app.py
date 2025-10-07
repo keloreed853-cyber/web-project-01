@@ -8,6 +8,10 @@ def hello_world():
     name = os.environ.get('NAME', 'World')
     return f'Hello, {name}!\n'
 
+@app.route('/health')
+def health_check():
+    return 'OK', 200
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 
